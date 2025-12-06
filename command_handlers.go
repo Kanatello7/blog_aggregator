@@ -113,7 +113,11 @@ func handlerAddFeed(s *state, cmd command) error {
 	if err != nil {
 		return fmt.Errorf("couldn't create feed: %w", err)
 	}
-
+	cmd.Args = cmd.Args[1:]
+	err = handlerFollow(s, cmd)
+	if err != nil {
+		return err
+	}
 	fmt.Println("Feed created successfully:")
 	printFeed(feed, user)
 	fmt.Println()
