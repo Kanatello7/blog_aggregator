@@ -186,3 +186,18 @@ func handlerFollow(s *state, cmd command) error {
 	fmt.Println("Name of the current user: ", feed_follow.UserName)
 	return nil
 }
+
+func handlerFollowing(s *state, cmd command) error {
+	current_user, err := s.db.GetUser(context.Background(), s.cfg.Username)
+	if err != nil {
+		return err
+	}
+	rows, err := s.db.GetFeedFollowsForUser(context.Background(), current_user.ID)
+	if err != nil {
+		return err
+	}
+	for _, row := range rows {
+		fmt.Println(row.FeedName)
+	}
+	return nil
+}
