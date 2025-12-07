@@ -1,6 +1,6 @@
-# Gator - A Simple RSS Aggregator CLI
+# Blog_aggregator - A Simple RSS Aggregator CLI
 
-`gator` is a command-line RSS feed aggregator written in Go as part of the Boot.dev "Learn Go" course. It allows you to manage users, add RSS feeds, scrape them periodically, and browse posts — all stored in a local PostgreSQL database.
+`blog_aggregator` is a command-line RSS feed aggregator written in Go as part of the Boot.dev "Learn Go" course. It allows you to manage users, add RSS feeds, scrape them periodically, and browse posts — all stored in a local PostgreSQL database.
 
 ## Features
 
@@ -21,7 +21,7 @@ Make sure PostgreSQL is running and you have a database ready.
 
 ## Installation
 
-Install the `gator` CLI globally using `go install`:
+Install the `blog_aggregator` CLI globally using `go install`:
 
 ```bash
 go install github.com/Kanatello7/blog_aggregator@latest
